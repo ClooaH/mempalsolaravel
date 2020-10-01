@@ -74,8 +74,14 @@
                             <label for="email">
                                 <p>Email</p>
                             </label>
-                            <input type="email" class="form-control @error('email') is-danger @enderror" id="email" name="email" aria-describedby="emailHelp" value="{{ old('email') }}">
-                            <div class="help is-danger">{{ $errors->first('email') }}</div>
+                            <input type="email"
+                            class="form-control @error('email') is-danger warning-border @enderror"
+                            id="email"
+                            name="email"
+                            aria-describedby="emailHelp"
+                            value="{{ old('email') }}">
+
+                            <div class="help is-danger warning-color">{{ $errors->first('email') }}</div>
                             <small id="emailHelp" class="form-text text-light">By submitting you are agreeing to us using
                                 your personlized data to nofity you of when this product is released.
                                 This information will be deleted as soon as this product is put forward to the market or
@@ -87,14 +93,14 @@
                 <div class="col text-center">
 
                     <p>I'd pay:</p>
-                    <select class="custom-select my-1 mr-sm-2 w-50 @error('sum') is-danger @enderror" id="sum" name="sum">
-                    <div class="help is-danger">{{ $errors->first('sum') }}</div>
-                        <option selected>Choose...</option>
+                <select class="custom-select my-1 mr-sm-2 w-50 @error('sum') is-danger warning-border @enderror" id="sum" name="sum">
+                        <option value="" selected>Choose...</option>
                         <option value="100">100kr</option>
                         <option value="200">200kr</option>
                         <option value="300">300kr</option>
                     </select>
                     <a href="#subbtn"><button type="submit" class="btn btn-light is-link" id="subbtn">Submit</button></a>
+                    <div class="help is-danger text-center warning-color">{{ $errors->first('sum') }}</div>
                 </div>
             </div>
         </form>

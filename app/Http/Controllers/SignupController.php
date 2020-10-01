@@ -10,7 +10,7 @@ class SignupController extends Controller
     public function store() {
 
         request()->validate([
-            'email' => 'required',
+            'email' => 'required|unique:signups',
             'sum' => 'required',
         ]);
 
