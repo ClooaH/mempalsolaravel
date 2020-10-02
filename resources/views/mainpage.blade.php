@@ -106,10 +106,11 @@
         </form>
 
         <form action="/regret" method="post">
+            <div class="text-center py-5 desktop-m">
             @csrf
             @method('delete')
             <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
+                <label for="email" class="form-label">Email</label>
                 <input
                 type="email"
                 class="form-control @error('email') is-invalid @enderror"
@@ -124,7 +125,8 @@
                 @enderror
                 <div id="emailHelp" class="form-text">We'll share your email with anyone else.</div>
             </div>
-            <button type="submit" class="btn btn-lg btn-light font-weight-bold">Submit</button>
+            <button type="submit" class="btn btn-light is-link">Submit</button>
+        </div>
         </form>
 
         <div class="row py-5 my-5 field-is-grouped">
