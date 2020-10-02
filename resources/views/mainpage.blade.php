@@ -105,6 +105,28 @@
             </div>
         </form>
 
+        <form action="/regret" method="post">
+            @csrf
+            @method('delete')
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input
+                type="email"
+                class="form-control @error('email') is-invalid @enderror"
+                id="email"
+                name="email"
+                aria-describedby="emailHelp"
+                required>
+                @error('email')
+                <div id="validationServerEmailFeedback" class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+                <div id="emailHelp" class="form-text">We'll share your email with anyone else.</div>
+            </div>
+            <button type="submit" class="btn btn-lg btn-light font-weight-bold">Submit</button>
+        </form>
+
         <div class="row py-5 my-5 field-is-grouped">
             <div class="col text-center">
                 <div class="container text-center">
