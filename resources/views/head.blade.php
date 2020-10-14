@@ -1,4 +1,4 @@
-@section('header')
+@section('head')
 
 <!DOCTYPE html>
 <html lang="en">

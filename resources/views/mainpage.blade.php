@@ -41,7 +41,6 @@
                 <span></span> -->
             </div>
     </nav>
-
     <div class="container h-100">
         <div class="row py-5 my-3 desktop-m">
             <div class="col text-center">
@@ -113,17 +112,17 @@
                 <label for="email" class="form-label">Email</label>
                 <input
                 type="email"
-                class="form-control @error('email') is-invalid @enderror"
+                class="form-control @error('regretemail') is-invalid @enderror"
                 id="email"
                 name="email"
                 aria-describedby="emailHelp"
                 required>
-                @error('email')
+                @error('regretemail')
                 <div id="validationServerEmailFeedback" class="invalid-feedback">
                     {{ $message }}
                 </div>
                 @enderror
-                <div id="emailHelp" class="form-text">We'll share your email with anyone else.</div>
+                <div id="emailHelp" class="form-text">Wish to remove your personalized data?</div>
             </div>
             <button type="submit" class="btn btn-light is-link">Submit</button>
         </div>

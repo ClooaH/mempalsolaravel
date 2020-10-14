@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Signup;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SignupMail;
 
 class SignupController extends Controller
 {
@@ -20,6 +22,10 @@ class SignupController extends Controller
         $signup->sum = request('sum');
 
         $signup->save();
+
+        Mail::to(request('email'))
+            ->send(new SignupMail());
+
         return redirect('/');
     }
     
